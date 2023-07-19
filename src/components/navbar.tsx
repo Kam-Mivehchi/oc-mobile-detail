@@ -1,15 +1,15 @@
 "use client";
 import Link from 'next/link'
 import Image from 'next/image'
-
+import { usePathname } from 'next/navigation'
 import { Dialog, Transition, Menu } from '@headlessui/react'
 import { XMarkIcon, Bars3Icon, BellIcon } from '@heroicons/react/24/outline'
 
 import * as React from 'react'
 const navigation = [
    { name: 'Home', href: '/', current: true },
-   { name: 'Services', href: '/', current: false },
-   { name: 'About', href: '/', current: false },
+   { name: 'Services', href: '/#services', current: false },
+   { name: 'About', href: '/about', current: false },
    { name: 'Book Online', href: '/', current: false },
 ]
 function classNames(...classes: string[]) {
@@ -17,9 +17,9 @@ function classNames(...classes: string[]) {
 }
 function Navbar() {
 
-
    const [open, setOpen] = React.useState<boolean>(false) //typescript 
-
+   const pathname = usePathname()
+   console.log(pathname)
 
    return (
       // <nav className='text-white'>
@@ -46,7 +46,8 @@ function Navbar() {
                               width={348}
                               height={53}
                               className='w-[12em] md:w-[15em]'
-                           />          </div>
+                           />
+                        </div>
                      </div>
                      <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
@@ -67,17 +68,17 @@ function Navbar() {
                                     {item.name}
                                  </button>)
                               }
-                              return (<a
+                              return (<Link
                                  key={item.name}
                                  href={item.href}
                                  className={classNames(
-                                    item.current ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
+                                    item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
                                     'rounded-full px-4 py-1 my-2 text-sm font-medium'
                                  )}
-                                 aria-current={item.current ? 'page' : undefined}
+                                 aria-current={item.href === pathname ? 'page' : undefined}
                               >
                                  {item.name}
-                              </a>)
+                              </Link>)
                            })}
                         </div>
                      </div>
@@ -161,17 +162,17 @@ function Navbar() {
                                              </button>)
                                           }
 
-                                          return (<a
+                                          return (<Link
                                              key={item.name}
                                              href={item.href}
                                              className={classNames(
-                                                item.current ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
+                                                item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
                                                 'rounded-full px-3 py-2 text-sm font-medium'
                                              )}
-                                             aria-current={item.current ? 'page' : undefined}
+                                             aria-current={item.href === pathname ? 'page' : undefined}
                                           >
                                              {item.name}
-                                          </a>)
+                                          </Link>)
                                        })}
 
                                     </div>
