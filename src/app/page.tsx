@@ -2,6 +2,7 @@
 import Hero from '../components/hero'
 import { Transition } from '@headlessui/react'
 import { usePathname } from 'next/navigation'
+import Prices from '../components/prices'
 
 export default function Home() {
   const pathname = usePathname()
@@ -17,6 +18,8 @@ export default function Home() {
       leaveFrom="transform translate-x-0 opacity-100"
       leaveTo="transform -translate-x-full opacity-0">
       <Hero />
+      <Prices />
     </Transition>
+
   )
 }
