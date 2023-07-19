@@ -11,7 +11,7 @@ function Hero() {
    return (
       <div className="  px-2 sm:px-6 lg:px-8 h-[70vh] flex flex-col items-center md:flex-row ">
          <div className="text-white flex-1 flex flex-col gap-4 text-center items-center md:text-left md:items-start">
-            <h1 className=" text-6xl md:text-8xl w-max font-bold text-accent">{content.hook}</h1>
+            <h1 className="text-6xl md:text-8xl w-max font-bold text-accent">{content.hook}</h1>
             <h2 className="md:text-5xl font-bold text-accent">{content.hook2}</h2>
             <p className="md:text-2xl leading-6">{content.details}</p>
             <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 transition-all ease-in rounded-full  w-max shadow-xl shadow-accent/30 border-2 duration-200 '>
