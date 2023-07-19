@@ -82,7 +82,7 @@ function Navbar() {
                         </div>
                      </div>
                      <div className=" hidden lg:flex items-center justify-end w-[15em]">
-                        <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 transition-all ease-in rounded-full  w-max shadow-xl shadow-accent/30 border-2 duration-200 '>
+                        <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-lg shadow-accent/30 border-2 duration-200 text-black '>
                            {navigation[3].name}
                         </button>
                      </div>
