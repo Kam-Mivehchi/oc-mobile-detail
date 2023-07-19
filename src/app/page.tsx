@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <main className="max-w-xl ">
+    <main className="max-w-[1280px]">
 
     </main>
   )
