@@ -1,7 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 
-let content = {
+
+interface IContent {
+   hook: string;
+   hook2: string;
+   details: string;
+   cta: string;
+}
+const content: IContent = {
    hook: "Dirty Car?",
    hook2: "Orange County, We've Got You Covered!",
    details: "OC Mobile Detailing is one of the most established and top-rated auto detailing service in Orange County, Ca.",
