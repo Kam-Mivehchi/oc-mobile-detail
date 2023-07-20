@@ -82,14 +82,14 @@ function classNames(...classes: string[]) {
 export default function Pricing() {
   const [frequency, setFrequency] = React.useState<Frequency>(frequencies[0])
 
-  type Frequency= {
+  type Frequency = {
     value: string;
     label: string;
     priceSuffix: string;
   }
 
   return (
-    <div className="">
+    <div className="" >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-accent sm:text-5xl">
@@ -123,7 +123,7 @@ export default function Pricing() {
             ))}
           </RadioGroup>
         </div>
-        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3" >
           {tiers.map((tier) => (
             <div
               key={tier.id}

@@ -6,11 +6,17 @@ import { Dialog, Transition, Menu } from '@headlessui/react'
 import { XMarkIcon, Bars3Icon, BellIcon } from '@heroicons/react/24/outline'
 
 import * as React from 'react'
-const navigation = [
-   { name: 'Home', href: '/', current: true },
-   { name: 'Services', href: '/#services', current: false },
-   { name: 'About', href: '/about', current: false },
-   { name: 'Book Online', href: '/', current: false },
+
+interface INavigation {
+   name: string;
+   href: string;
+
+}
+const navigation: INavigation[] = [
+   { name: 'Home', href: '/' },
+   { name: 'Pricing', href: '/#pricing' },
+   { name: 'About', href: '/about' },
+   { name: 'Book Online', href: '/' },
 ]
 function classNames(...classes: string[]) {
    return classes.filter(Boolean).join(' ')
@@ -32,7 +38,6 @@ function Navbar() {
       //    </div>
       // </nav>
       <nav className="">
-
          <>
             <div className="mx-auto px-2 sm:px-6 lg:px-8">
                <div className="relative flex h-16 items-center justify-between">
@@ -61,7 +66,8 @@ function Navbar() {
                         </button>
                      </div>
                      <div className="hidden  sm:block">
-                        <div className="flex space-x-4 bg-accent/20 px-2 rounded-full  ">
+
+                        <div className="flex space-x-4 bg-accent/20 px-2 rounded-full  relative">
                            {navigation.map((item) => {
                               if (item.name === "Book Online") {
                                  return (<button className='bg-accent px-6 py-2 my-1 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max lg:hidden '>
@@ -73,7 +79,7 @@ function Navbar() {
                                  href={item.href}
                                  className={classNames(
                                     item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
-                                    'rounded-full px-4 py-1 my-2 text-sm font-medium'
+                                    'rounded-full px-4 py-1 my-2 text-sm font-medium transition-all duration-700'
                                  )}
                                  aria-current={item.href === pathname ? 'page' : undefined}
                               >
