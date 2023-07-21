@@ -5,15 +5,15 @@ import { CheckIcon } from '@heroicons/react/20/solid'
 import * as React from 'react'
 
 const frequencies = [
-  { value: 'monthly', label: 'Monthly', priceSuffix: '/month' },
-  { value: 'annually', label: 'Annually', priceSuffix: '/year' },
+  { value: 'Sedan', label: 'Sedan', priceSuffix: '/month' },
+  { value: 'SUV', label: 'SUV', priceSuffix: '/year' },
 ]
 const tiers = [
   {
     name: 'Exterior Clean',
     id: 'tier-freelancer',
     href: '#',
-    price: { monthly: '$35', annually: '$144' },
+    price: { Sedan: '$35', SUV: '$144' },
     description: 'Spot free exterior wash. Extra charge for large vehicles.',
     features: ['Exterior rinse', 'Rims', 'Tires', 'Spot free'],
     mostPopular: false,
@@ -22,7 +22,7 @@ const tiers = [
     name: 'Interior and Exterior Clean',
     id: 'tier-freelancer',
     href: '#',
-    price: { monthly: '$45', annually: '$144' },
+    price: { Sedan: '$45', SUV: '$144' },
     description: 'Spot free exterior wash with interior vacuum and wipe down. Extra charge for large vehicles.',
     features: ['Exterior Rinse', 'Rims and tires', 'Interior vacuum', 'Interior wipe down', 'Spot free'],
     mostPopular: false,
@@ -31,7 +31,7 @@ const tiers = [
     name: 'Exterior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { monthly: '$120', annually: '$288' },
+    price: { Sedan: '$120', SUV: '$288' },
     description: 'Spot free rinse with polish and wax. Extra charge for large vehicles.',
     features: [
       'Exterior Rinse',
@@ -46,7 +46,7 @@ const tiers = [
     name: 'Interior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { monthly: '$140', annually: '$288' },
+    price: { Sedan: '$140', SUV: '$288' },
     description: 'Interior vacuum, wipe down, and shampoo. Extra charge for large vehicles.',
     features: [
       'Interior vacuum',
@@ -61,7 +61,7 @@ const tiers = [
     name: 'Interior and Exterior Detail',
     id: 'tier-enterprise',
     href: '#',
-    price: { monthly: '$250', annually: '$576' },
+    price: { Sedan: '$250', SUV: '$576' },
     description: 'Spot free rinse with police and wax. Interior vacuum, wipe down, and shampoo. Extra charge for large vehicles.',
     features: [
       'Hand washed and waxed',
