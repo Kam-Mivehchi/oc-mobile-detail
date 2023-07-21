@@ -18,7 +18,6 @@ export default function Home() {
       leaveFrom="transform translate-x-0 opacity-100"
       leaveTo="transform -translate-x-full opacity-0">
       <Hero />
-      <Prices />
     </Transition>
 
   )

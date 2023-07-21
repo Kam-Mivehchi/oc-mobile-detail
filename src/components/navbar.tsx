@@ -16,6 +16,7 @@ const navigation: INavigation[] = [
    { name: 'Home', href: '/' },
    { name: 'Pricing', href: '/#pricing' },
    { name: 'About', href: '/about' },
+   { name: 'Services', href: '/services' },
    { name: 'Book Online', href: '/' },
 ]
 function classNames(...classes: string[]) {
