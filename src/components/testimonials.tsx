@@ -1,5 +1,5 @@
 'use client'
-export default function Example() {
+export default function Testimonials() {
     return (
       <section className=" pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
