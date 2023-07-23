@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 function About() {
    const pathname = usePathname();
-   return (<Transition as="main" className="max-w-[1280px] mx-auto transition-all duration-700 text-white"
+   return (<Transition as="main" className="max-w-[1280px] mx-auto transition-all duration-700 text-white px-2 sm:px-6 lg:px-8"
       appear={true}
       show={true}
       enter="ease-in-out"
