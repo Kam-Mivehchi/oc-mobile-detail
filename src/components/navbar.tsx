@@ -16,6 +16,7 @@ const navigation: INavigation[] = [
    { name: 'Home', href: '/' },
    { name: 'Pricing', href: '/#pricing' },
    { name: 'About', href: '/about' },
+   { name: 'Services', href: '/services' },
    { name: 'Book Online', href: 'https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start' },
 ]
 function classNames(...classes: string[]) {

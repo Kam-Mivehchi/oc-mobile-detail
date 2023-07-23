@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 export const metadata: Metadata = {
   title: 'OC Mobile Detail',
   description: "OC's finest car detailing service",
@@ -18,8 +19,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         {children}
-
-
+        <Footer />
       </body>
     </html>
   )
