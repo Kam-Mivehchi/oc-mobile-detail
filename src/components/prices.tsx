@@ -151,7 +151,7 @@ export default function Pricing() {
               <p className="mt-4 text-sm leading-6 text-white">{tier.description}</p>
               <p className="mt-6 flex items-baseline gap-x-1">
                 {/* I had to add 'as keyof typeof tier.price. I am not sure why typescript needed this' */}
-                <span className="text-4xl font-bold tracking-tight text-gray-900">{tier.price[frequency.value as keyof typeof tier.price]}</span>
+                <span className="text-4xl font-bold tracking-tight text-white">{tier.price[frequency.value as keyof typeof tier.price]}</span>
               </p>
               <a
                 href={tier.href}
