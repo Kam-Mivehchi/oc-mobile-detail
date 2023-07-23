@@ -13,7 +13,7 @@ const tiers = [
     name: 'Exterior Clean',
     id: 'tier-freelancer',
     href: '#',
-    price: { Sedan: '$35', SUV: '$144' },
+    price: { Sedan: '$35', SUV: '$45' },
     description: 'Spot free exterior wash. Extra charge for large vehicles.',
     features: ['Exterior rinse', 'Rims', 'Tires', 'Spot free'],
     mostPopular: false,
@@ -22,7 +22,7 @@ const tiers = [
     name: 'Interior and Exterior Clean',
     id: 'tier-freelancer',
     href: '#',
-    price: { Sedan: '$45', SUV: '$144' },
+    price: { Sedan: '$45', SUV: '$55' },
     description: 'Spot free exterior wash with interior vacuum and wipe down. Extra charge for large vehicles.',
     features: ['Exterior Rinse', 'Rims and tires', 'Interior vacuum', 'Interior wipe down', 'Spot free'],
     mostPopular: false,
@@ -31,7 +31,7 @@ const tiers = [
     name: 'Exterior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { Sedan: '$120', SUV: '$288' },
+    price: { Sedan: '$120', SUV: '$160' },
     description: 'Spot free rinse with polish and wax. Extra charge for large vehicles.',
     features: [
       'Exterior Rinse',
@@ -46,7 +46,7 @@ const tiers = [
     name: 'Interior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { Sedan: '$140', SUV: '$288' },
+    price: { Sedan: '$140', SUV: '$170' },
     description: 'Interior vacuum, wipe down, and shampoo. Extra charge for large vehicles.',
     features: [
       'Interior vacuum',
@@ -61,7 +61,7 @@ const tiers = [
     name: 'Interior and Exterior Detail',
     id: 'tier-enterprise',
     href: '#',
-    price: { Sedan: '$250', SUV: '$576' },
+    price: { Sedan: '$250', SUV: '$275' },
     description: 'Spot free rinse with police and wax. Interior vacuum, wipe down, and shampoo. Extra charge for large vehicles.',
     features: [
       'Hand washed and waxed',
@@ -89,7 +89,7 @@ export default function Pricing() {
   }
 
   return (
-    <div className="" >
+    <div className="py-24" >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-accent sm:text-5xl">
@@ -113,7 +113,7 @@ export default function Pricing() {
                 value={option}
                 className={({ checked }) =>
                   classNames(
-                    checked ? 'bg-indigo-600 text-white' : 'text-gray-500',
+                    checked ? 'bg-accent text-white' : 'text-gray-500',
                     'cursor-pointer rounded-full px-2.5 py-1'
                   )
                 }

@@ -15,7 +15,6 @@ function About() {
       leave="ease-out"
       leaveFrom="translate-x-0 opacity-100"
       leaveTo="-translate-x-full opacity-0">
-      Services
       <Prices /> 
    </Transition>
    )
