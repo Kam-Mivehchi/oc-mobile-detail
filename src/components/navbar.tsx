@@ -14,9 +14,9 @@ interface INavigation {
 }
 const navigation: INavigation[] = [
    { name: 'Home', href: '/' },
-   { name: 'Pricing', href: '/#pricing' },
    { name: 'About', href: '/about' },
    { name: 'Services', href: '/services' },
+   { name: 'Service Areas', href: '/servicearea' },
    { name: 'Book Online', href: 'https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start' },
 ]
 function classNames(...classes: string[]) {
@@ -47,7 +47,7 @@ function Navbar() {
                            />
                         </div>
                      </div>
-                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                     <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
                         {/* Mobile menu button*/}
                         <button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/50 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={() => setOpen(true)}>
                            <span className="sr-only">Open main menu</span>
@@ -58,12 +58,12 @@ function Navbar() {
                            )}
                         </button>
                      </div>
-                     <div className="hidden  sm:block">
+                     <div className="hidden  md:block">
 
-                        <div className="flex space-x-4 bg-accent/20 px-2 rounded-full  relative">
+                        <div className="flex gap-2 bg-accent/20 px-2 rounded-full  relative">
                            {navigation.map((item) => {
                               if (item.name === "Book Online") {
-                                 return (<a href={item.href} className='bg-accent px-6 py-2 my-1 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max lg:hidden '>
+                                 return (<a href={item.href} className='bg-accent px-4 py-1 grid content-center my-1 text-sm font-medium hover:text-white hover:shadow-accent/50 hover:bg-accent/7 rounded-full  w-max lg:hidden shadow-lg shadow-accent/30 border-2'>
                                     {item.name}
                                  </a>)
                               }
@@ -72,7 +72,7 @@ function Navbar() {
                                  href={item.href}
                                  className={classNames(
                                     item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
-                                    'rounded-full px-4 py-1 my-2 text-sm font-medium transition-all duration-700'
+                                    'rounded-full px-4 py-1 my-2 lg:text-sm font-medium transition-all duration-700 text-xs w-max'
                                  )}
                                  aria-current={item.href === pathname ? 'page' : undefined}
                               >
