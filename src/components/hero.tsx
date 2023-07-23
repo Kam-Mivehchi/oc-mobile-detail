@@ -7,12 +7,14 @@ interface IContent {
    hook2: string;
    details: string;
    cta: string;
+   href: string;
 }
 const content: IContent = {
    hook: "Dirty Car?",
    hook2: "Orange County, We've Got You Covered!",
    details: "OC Mobile Detailing is one of the most established and top-rated auto detailing service in Orange County, Ca.",
-   cta: "Book Now!"
+   cta: "Book Now!",
+   href: "https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start"
 }
 function Hero() {
    return (<div className="  px-2 sm:px-6 lg:px-8 h-[70vh] flex flex-col items-center md:flex-row ">
@@ -20,9 +22,9 @@ function Hero() {
          <h1 className=" text-6xl md:text-8xl w-max font-bold text-accent text-transparent bg-clip-text bg-gradient-to-br from-white   to-accent">{content.hook}</h1>
          <h2 className=" text-3xl md:text-4xl font-bold text-accent">{content.hook2}</h2>
          <p className="md:text-2xl leading-6">{content.details}</p>
-         <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-md shadow-black/30 border-2 duration-200 text-black ' >
+         <a href={content.href} className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-md shadow-black/30 border-2 duration-200 text-black ' >
             {content.cta}
-         </button>
+         </a>
       </div>
       <div className="text-white flex-1">
          <Image

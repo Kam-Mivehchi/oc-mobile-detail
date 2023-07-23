@@ -16,7 +16,7 @@ const navigation: INavigation[] = [
    { name: 'Home', href: '/' },
    { name: 'Pricing', href: '/#pricing' },
    { name: 'About', href: '/about' },
-   { name: 'Book Online', href: '/' },
+   { name: 'Book Online', href: 'https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start' },
 ]
 function classNames(...classes: string[]) {
    return classes.filter(Boolean).join(' ')
@@ -25,18 +25,10 @@ function Navbar() {
 
    const [open, setOpen] = React.useState<boolean>(false) //typescript 
    const pathname = usePathname()
-   console.log(pathname)
+
 
    return (
-      // <nav className='text-white'>
 
-      //    <div className="hidden md:block">
-
-      //       <Link href="/">Home</Link>
-      //       <Link href="/">Services</Link>
-      //       <Link href="/">About</Link>
-      //    </div>
-      // </nav>
       <nav className="">
          <>
             <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -70,9 +62,9 @@ function Navbar() {
                         <div className="flex space-x-4 bg-accent/20 px-2 rounded-full  relative">
                            {navigation.map((item) => {
                               if (item.name === "Book Online") {
-                                 return (<button className='bg-accent px-6 py-2 my-1 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max lg:hidden '>
+                                 return (<a href={item.href} className='bg-accent px-6 py-2 my-1 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max lg:hidden '>
                                     {item.name}
-                                 </button>)
+                                 </a>)
                               }
                               return (<Link
                                  key={item.name}
@@ -89,9 +81,9 @@ function Navbar() {
                         </div>
                      </div>
                      <div className=" hidden lg:flex items-center justify-end w-[15em]">
-                        <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-lg shadow-accent/30 border-2 duration-200 text-black '>
+                        < a href={navigation[3].href} className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-lg shadow-accent/30 border-2 duration-200 text-black '>
                            {navigation[3].name}
-                        </button>
+                        </ a>
                      </div>
                   </div>
 
@@ -163,9 +155,9 @@ function Navbar() {
                                        {navigation.map((item) => {
 
                                           if (item.name === "Book Online") {
-                                             return (<button className='bg-accent px-6 py-2 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max'>
+                                             return (<a href={item.href} className='bg-accent px-6 py-2 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max'>
                                                 {item.name}
-                                             </button>)
+                                             </a>)
                                           }
 
                                           return (<Link
