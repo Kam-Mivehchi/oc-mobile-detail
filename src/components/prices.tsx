@@ -8,7 +8,7 @@ const frequencies = [
   { value: 'Sedan', label: 'Sedan', priceSuffix: '/month' },
   { value: 'SUV', label: 'SUV', priceSuffix: '/year' },
 ]
-const tiers = [
+export const tiers = [
   {
     name: 'Exterior Clean',
     id: 'tier-freelancer',
