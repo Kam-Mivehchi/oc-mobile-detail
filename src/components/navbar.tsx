@@ -1,23 +1,36 @@
 "use client";
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Dialog, Transition, Menu } from '@headlessui/react'
 import { XMarkIcon, Bars3Icon, BellIcon } from '@heroicons/react/24/outline'
-
+import Dropdown from '../components/dropdown'
 import * as React from 'react'
 
-interface INavigation {
+export interface INavigation {
    name: string;
    href: string;
+   subpages?: INavigation[];
 
 }
+
 const navigation: INavigation[] = [
    { name: 'Home', href: '/' },
-   { name: 'Pricing', href: '/#pricing' },
    { name: 'About', href: '/about' },
    { name: 'Services', href: '/services' },
-   { name: 'Book Online', href: '/' },
+   {
+      name: 'Service Areas',
+      href: '/service-areas',
+      subpages: [
+         { name: "Newport Beach", href: '/service-areas/newport-beach' },
+         { name: "Orange County", href: '/service-areas/orange-county' },
+         { name: "Irvine", href: '/service-areas/irvine' },
+         { name: "Lake Forest", href: '/service-areas/lake-forest' },
+         { name: "Costa Mesa", href: '/service-areas/costa-mesa' },
+         { name: "See All", href: '/service-areas' },
+      ]
+   },
+   { name: 'Book Online', href: 'https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start' },
 ]
 function classNames(...classes: string[]) {
    return classes.filter(Boolean).join(' ')
@@ -26,18 +39,16 @@ function Navbar() {
 
    const [open, setOpen] = React.useState<boolean>(false) //typescript 
    const pathname = usePathname()
+   const router = useRouter()
+
    console.log(pathname)
 
+   function handleMobileNavClicks(href: string) {
+      router.replace(href)
+      setOpen(false);
+   }
    return (
-      // <nav className='text-white'>
 
-      //    <div className="hidden md:block">
-
-      //       <Link href="/">Home</Link>
-      //       <Link href="/">Services</Link>
-      //       <Link href="/">About</Link>
-      //    </div>
-      // </nav>
       <nav className="">
          <>
             <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -55,7 +66,7 @@ function Navbar() {
                            />
                         </div>
                      </div>
-                     <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                     <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
                         {/* Mobile menu button*/}
                         <button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/50 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={() => setOpen(true)}>
                            <span className="sr-only">Open main menu</span>
@@ -66,21 +77,24 @@ function Navbar() {
                            )}
                         </button>
                      </div>
-                     <div className="hidden  sm:block">
+                     <div className="hidden  md:block">
 
-                        <div className="flex space-x-4 bg-accent/20 px-2 rounded-full  relative">
+                        <div className="flex gap-1 lg:gap-4 bg-accent/20 px-2 rounded-full  relative">
                            {navigation.map((item) => {
                               if (item.name === "Book Online") {
-                                 return (<button className='bg-accent px-6 py-2 my-1 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max lg:hidden '>
+                                 return (<a href={item.href} key={item.name} className='bg-accent px-4 my-2 py-1 text-xs lg:text-sm font-medium hover:text-white hover:shadow-accent/50 hover:bg-accent/70 rounded-full text-left w-max lg:hidden shadow-lg shadow-accent/30 border-2'>
                                     {item.name}
-                                 </button>)
+                                 </a>)
+                              }
+                              if (item.name === "Service Areas") {
+                                 return (<Dropdown data={item} key={item.name} setOpen={setOpen} mobile={false} />)
                               }
                               return (<Link
                                  key={item.name}
                                  href={item.href}
                                  className={classNames(
                                     item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
-                                    'rounded-full px-4 py-1 my-2 text-sm font-medium transition-all duration-700'
+                                    'rounded-full px-4 py-1 my-2 text-xs lg:text-sm font-medium transition-all duration-700'
                                  )}
                                  aria-current={item.href === pathname ? 'page' : undefined}
                               >
@@ -90,9 +104,9 @@ function Navbar() {
                         </div>
                      </div>
                      <div className=" hidden lg:flex items-center justify-end w-[15em]">
-                        <button className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-lg shadow-accent/30 border-2 duration-200 text-black '>
-                           {navigation[3].name}
-                        </button>
+                        <a href={navigation[4].href} className='bg-accent px-6 py-2 text-xs font-medium  hover:text-white hover:shadow-accent/50 hover:bg-accent/70 transition-all ease-in rounded-full  w-max shadow-lg shadow-accent/30 border-2 duration-200 text-black '>
+                           {navigation[4].name}
+                        </a>
                      </div>
                   </div>
 
@@ -160,18 +174,24 @@ function Navbar() {
                                           </div>
                                        </Dialog.Title>
                                     </div>
-                                    <div className="relative mt-6 flex-1 px-4 sm:px-6 flex flex-col">
+                                    <div className=" mt-6 flex-1 px-4 sm:px-6 flex flex-col" >
                                        {navigation.map((item) => {
 
                                           if (item.name === "Book Online") {
-                                             return (<button className='bg-accent px-6 py-2 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max'>
+                                             return (<a key={item.name}
+                                                href={item.href}
+                                                className='bg-accent px-6 py-2 text-sm font-medium hover:bg-accent/80 rounded-full text-left w-max'>
                                                 {item.name}
-                                             </button>)
+                                             </a>)
+                                          }
+                                          if (item.name === "Service Areas") {
+                                             return (<Dropdown data={item} key={item.name} setOpen={setOpen} mobile={true} />)
                                           }
 
                                           return (<Link
                                              key={item.name}
                                              href={item.href}
+                                             onClick={() => handleMobileNavClicks(item.href)}
                                              className={classNames(
                                                 item.href === pathname ? 'bg-black/70 text-white' : 'text-gray-300 hover:bg-white/50 hover:text-white',
                                                 'rounded-full px-3 py-2 text-sm font-medium'
