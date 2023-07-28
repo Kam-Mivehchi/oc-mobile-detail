@@ -37,7 +37,7 @@ function NavDropdownComponent({ data, setOpen, mobile }: { data: INavigation, se
          >
             <Popover.Panel className="absolute md:right-0 top-full z-10 mt-3 w-full md:w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                <div className="p-4">
-                  {cityData.map((item) => (
+                  {data.subpages!.map((item) => (
                      <div onClick={() => setOpen(false)}
                         key={item as unknown as string}
                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -55,6 +55,7 @@ function NavDropdownComponent({ data, setOpen, mobile }: { data: INavigation, se
                         </div>
                      </div>
                   ))}
+
                </div>
 
             </Popover.Panel>
