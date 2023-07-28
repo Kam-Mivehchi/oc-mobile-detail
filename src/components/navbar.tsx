@@ -11,6 +11,7 @@ export interface INavigation {
    name: string;
    href: string;
    subpages?: INavigation[];
+   img?: string;
 
 }
 
@@ -22,12 +23,12 @@ const navigation: INavigation[] = [
       name: 'Service Areas',
       href: '/service-areas',
       subpages: [
-         { name: "Newport Beach", href: '/service-areas/newport-beach' },
-         { name: "Orange County", href: '/service-areas/orange-county' },
-         { name: "Irvine", href: '/service-areas/irvine' },
-         { name: "Lake Forest", href: '/service-areas/lake-forest' },
-         { name: "Costa Mesa", href: '/service-areas/costa-mesa' },
-         { name: "See All", href: '/service-areas' },
+         { name: "Newport Beach", href: '/service-areas/newport-beach', img: "/assets/citys/newport-beach.jpg" },
+         { name: "Orange County", href: '/service-areas/orange-county', img: "/assets/citys/orange-county.jpg" },
+         { name: "Irvine", href: '/service-areas/irvine', img: "/assets/citys/irvine.jpg" },
+         { name: "Lake Forest", href: '/service-areas/lake-forest', img: "/assets/citys/lake-forest.jpg" },
+         { name: "Costa Mesa", href: '/service-areas/costa-mesa', img: "/assets/citys/costa-mesa.jpg" },
+         { name: "See All", href: '/service-areas', img: "/assets/citys/newport-beach.jpg" },
       ]
    },
    { name: 'Book Online', href: 'https://squareup.com/appointments/book/zbjssb4r09gtek/LPB9YSAY3YG93/start' },
