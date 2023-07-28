@@ -25,7 +25,7 @@ function ServiceAreas() {
                <Link href={city.href}>
                   <h2>{city.name}</h2>
                   <p className="">{city.description}</p>
-                  <Image src={city.img} alt={city.name} />
+                  <Image src={city.img} alt={city.name} width={500} height={500} />
                </Link>
             )
          })}

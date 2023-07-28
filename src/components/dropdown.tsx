@@ -4,18 +4,10 @@ import * as React from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-
-import {
-   ArrowPathIcon,
-   Bars3Icon,
-   ChartPieIcon,
-   CursorArrowRaysIcon,
-   FingerPrintIcon,
-   SquaresPlusIcon,
-   XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { cityData } from '../content'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { INavigation } from './navbar'
+import Image from 'next/image'
 function classNames(...classes: string[]) {
    return classes.filter(Boolean).join(' ')
 }
@@ -50,8 +42,9 @@ function NavDropdownComponent({ data, setOpen, mobile }: { data: INavigation, se
                         key={item as unknown as string}
                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                      >
-                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                           {/* <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" /> */}
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white relative overflow-hidden">
+
+                           <Image src={item.img} fill alt={`${item.name} thumbnail`} />
                         </div>
                         <div className="flex-auto">
                            <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900">
@@ -62,6 +55,7 @@ function NavDropdownComponent({ data, setOpen, mobile }: { data: INavigation, se
                         </div>
                      </div>
                   ))}
+
                </div>
 
             </Popover.Panel>
