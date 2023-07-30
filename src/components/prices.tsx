@@ -25,7 +25,7 @@ export const tiers = [
     price: { Sedan: '$150', SUV: '$175' },
     description: 'Spot free exterior wash with interior vacuum and wipe down.',
     features: ['Exterior Rinse', 'Rims and tires', 'Interior vacuum', 'Interior wipe down', 'Spot free'],
-    mostPopular: false,
+    mostPopular: true,
   },
   {
     name: 'Exterior Detail',
@@ -40,7 +40,7 @@ export const tiers = [
       'Spot free',
       'Hand dried',
     ],
-    mostPopular: true,
+    mostPopular: false,
   },
   {
     name: 'Interior Detail',
