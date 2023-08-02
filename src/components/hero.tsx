@@ -11,7 +11,7 @@ interface IContent {
 const content: IContent = {
    hook: "Dirty Car?",
    hook2: "Orange County, We've Got You Covered!",
-   details: "OC Mobile Detailing is one of the most established and top-rated auto detailing service in Orange County, Ca.",
+   details: "OC Mobile Detailing is one of the most established and top-rated car detailing service in Orange County, Ca.",
    cta: "Book Now!"
 }
 function Hero() {
