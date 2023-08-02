@@ -2,7 +2,7 @@
 import { Transition } from '@headlessui/react'
 import { usePathname } from 'next/navigation'
 import Hero from '../components/hero'
-import Testimonials from '../components/testimonials'
+import Reviews from '../components/reviews'
 import Marketing from '../components/marketing'
 import Results from '../components/results'
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       leaveTo="transform -translate-x-full opacity-0">
       <Hero />
       <Marketing />
-      <Testimonials />
+      <Reviews />
       <Results />
     </Transition>
 
