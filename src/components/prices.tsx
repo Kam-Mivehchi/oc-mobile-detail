@@ -6,7 +6,7 @@ import * as React from 'react'
 
 const frequencies = [
   { value: 'Sedan', label: 'Sedan', priceSuffix: '/month' },
-  { value: 'SUV', label: 'SUV', priceSuffix: '/year' },
+  { value: 'Trucks/SUV', label: 'Trucks/SUV', priceSuffix: '/year' },
 ]
 export const tiers = [
   {
@@ -89,16 +89,17 @@ export default function Pricing() {
   }
 
   return (
-    <div className="py-24" >
+    <div className="pt-8" >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mt-2 text-4xl font-bold tracking-tight text-accent sm:text-5xl">
-            Pricing plans for teams of&nbsp;all&nbsp;sizes
-          </p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight text-accent sm:text-5xl">
+            Services
+          </h1>
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
-          Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
-          loyalty, and driving sales.
+        <p className="text-center my-6 text-2xl font-semibold mx-auto">Ready to Treat Your Car to the Ultimate Care?</p>
+        <p className="mx-auto max-w-2xl  text-lg leading-8 text-white">
+
+          Explore our detailed service packages below and book your appointment today! If you have any questions or special requests, don't hesitate to contact our friendly team. We look forward to serving you and your car!
         </p>
         <div className="mt-16 flex justify-center">
           <RadioGroup
