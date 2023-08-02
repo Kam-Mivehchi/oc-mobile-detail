@@ -44,7 +44,7 @@ function NavDropdownComponent({ data, setOpen, mobile }: { data: INavigation, se
                      >
                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white relative overflow-hidden">
 
-                           <Image src={item.img} fill alt={`${item.name} thumbnail`} />
+                           <Image src={item.img ? item.img : ""} fill alt={`${item.name} thumbnail`} />
                         </div>
                         <div className="flex-auto">
                            <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900">

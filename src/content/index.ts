@@ -96,21 +96,21 @@ export const cityData: ICityData[] = [
       description: "Lorem Ipsum Ipsum Ipsum Ipsum Ips Lorem ",
       img: "/assets/citys/newport-beach.jpg",
       href: "/service-areas/newport-beach",
-      position: "50% 20%"
+      position: "center"
    },
    {
       name: "Costa Mesa, CA",
       description: "Lorem Ipsum Ipsum Ipsum Ipsum Ips Lorem ",
       img: "/assets/citys/costa-mesa.jpg",
       href: "/service-areas/costa-mesa",
-      position: "center"
+      position: "50% 52%"
    },
    {
       name: "Lake Forest, CA",
       description: "Lorem Ipsum Ipsum Ipsum Ipsum Ips Lorem ",
       img: "/assets/citys/lake-forest.jpg",
       href: "/service-areas/lake-forest",
-      position: "center"
+      position: "bottom"
    },
    {
       name: "Orange County, CA",
