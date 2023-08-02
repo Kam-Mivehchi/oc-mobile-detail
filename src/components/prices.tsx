@@ -10,28 +10,28 @@ const frequencies = [
 ]
 export const tiers = [
   {
-    name: 'Exterior Clean',
+    name: 'Basic Wash',
     id: 'tier-freelancer',
     href: '#',
-    price: { Sedan: '$35', SUV: '$45' },
+    price: { Sedan: '$60', SUV: '$70' },
     description: 'Spot free exterior wash.',
     features: ['Exterior rinse', 'Rims', 'Tires', 'Spot free'],
     mostPopular: false,
   },
   {
-    name: 'Interior and Exterior Clean',
+    name: 'Wash and Wax',
     id: 'tier-freelancer',
     href: '#',
-    price: { Sedan: '$45', SUV: '$55' },
+    price: { Sedan: '$150', SUV: '$175' },
     description: 'Spot free exterior wash with interior vacuum and wipe down.',
     features: ['Exterior Rinse', 'Rims and tires', 'Interior vacuum', 'Interior wipe down', 'Spot free'],
-    mostPopular: false,
+    mostPopular: true,
   },
   {
     name: 'Exterior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { Sedan: '$120', SUV: '$160' },
+    price: { Sedan: '$175', SUV: '$195' },
     description: 'Spot free rinse with polish and wax.',
     features: [
       'Exterior Rinse',
@@ -40,13 +40,13 @@ export const tiers = [
       'Spot free',
       'Hand dried',
     ],
-    mostPopular: true,
+    mostPopular: false,
   },
   {
     name: 'Interior Detail',
     id: 'tier-startup',
     href: '#',
-    price: { Sedan: '$140', SUV: '$170' },
+    price: { Sedan: '$175', SUV: '$195' },
     description: 'Interior vacuum, wipe down, and shampoo.',
     features: [
       'Interior vacuum',
@@ -58,10 +58,10 @@ export const tiers = [
     mostPopular: false,
   },
   {
-    name: 'Interior and Exterior Detail',
+    name: 'Full Detail',
     id: 'tier-enterprise',
     href: '#',
-    price: { Sedan: '$250', SUV: '$275' },
+    price: { Sedan: '$350', SUV: '$375' },
     description: 'Spot free rinse with police and wax. Interior vacuum, wipe down, and shampoo.',
     features: [
       'Hand washed and waxed',
