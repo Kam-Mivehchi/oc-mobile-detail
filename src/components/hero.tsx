@@ -15,7 +15,7 @@ const content: IContent = {
    cta: "Book Now!"
 }
 function Hero() {
-   return (<div className="  px-2 sm:px-6 lg:px-8 h-[70vh] flex flex-col items-center md:flex-row ">
+   return (<div className="  px-2 sm:px-6 lg:px-8 h-[70vh] flex flex-col items-center md:flex-row  my-24">
       <div className="text-white flex-1 flex flex-col gap-4 text-center items-center md:text-left md:items-start">
          <h2 className=" text-6xl md:text-8xl w-max font-bold text-accent text-transparent bg-clip-text bg-gradient-to-br from-white   to-accent">{content.hook}</h2>
          <h2 className=" text-3xl md:text-4xl font-bold text-accent">{content.hook2}</h2>

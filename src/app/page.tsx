@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import Hero from '../components/hero'
 import Testimonials from '../components/testimonials'
 import Marketing from '../components/marketing'
+import Results from '../components/results'
 export default function Home() {
   const pathname = usePathname()
   console.log(pathname)
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <Marketing />
       <Testimonials />
+      <Results />
     </Transition>
 
   )

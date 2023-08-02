@@ -1,10 +1,10 @@
 'use client';
 import React from 'react'
 import { Transition } from '@headlessui/react'
-import { usePathname } from 'next/navigation'
+
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 function About() {
-   const pathname = usePathname();
+
    return (<Transition as="main" className="max-w-[1280px] mx-auto transition-all duration-700 text-white px-2 sm:px-6 lg:px-8 flex flex-col gap-3"
       appear={true}
       show={true}

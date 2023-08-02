@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-gradient-to-b from-black via-primary to-accent/50 min-h-screen'>
+      <body className='bg-gradient-to-b from-[#121212] via-primary to-accent/50 min-h-screen'>
         <header className=' max-w-[1280px] mx-auto'>
 
           <Navbar />
