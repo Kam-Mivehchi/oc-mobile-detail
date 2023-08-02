@@ -9,7 +9,7 @@ export default function Home() {
   const pathname = usePathname()
   console.log(pathname)
   return (
-    <Transition as="main" className="max-w-[1280px] mx-auto transition-all duration-700 text-white flex flex-col gap-12"
+    <Transition as="main" className="max-w-[1280px] mx-auto transition-all duration-700 text-white flex flex-col gap-24"
       appear={true}
       show={true}
       enter="ease-in-out"
